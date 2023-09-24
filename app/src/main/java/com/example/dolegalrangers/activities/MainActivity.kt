@@ -3,6 +3,7 @@ package com.example.dolegalrangers.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.dolegalrangers.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -23,11 +24,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.addStoryPart.setOnClickListener {
-
+            intent = Intent(this,AddActivity::class.java)
+            startActivity(intent)
         }
 
         binding.leaderboardPart.setOnClickListener {
-
+            intent = Intent(this,LeaderboardActivity::class.java)
+            startActivity(intent)
         }
 
         binding.reward.setOnClickListener {

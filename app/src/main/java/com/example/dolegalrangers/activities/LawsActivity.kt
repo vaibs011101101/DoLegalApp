@@ -16,12 +16,9 @@ class LawsActivity : AppCompatActivity() {
 
         list = ArrayList()
 
-        list.add(LawModel("Child Labor","112345"))
-        list.add(LawModel("Child Mariage","11345"))
-        list.add(LawModel("Child Harrasment","113432345"))
-        list.add(LawModel("Child Labor","112345"))
-        list.add(LawModel("Child Labor","112345"))
-        list.add(LawModel("Child Labor","112345"))
+        list.add(LawModel("The Right to Education","Act (RTE), 2009"))
+        list.add(LawModel("The Protection of Children from Sexual Offences","(POCSO) Act, 2012"))
+        list.add(LawModel("The Child Labour (Prohibition and Regulation)","Act, 1986"))
 
         val layoutManager = LinearLayoutManager(this)
         val adapter = LawAdapter(list)

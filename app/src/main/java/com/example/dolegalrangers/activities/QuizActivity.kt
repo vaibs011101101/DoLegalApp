@@ -1,11 +1,11 @@
 package com.example.dolegalrangers.activities
 
 import android.content.Intent
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.dolegalrangers.R
 import com.example.dolegalrangers.databinding.ActivityQuizBinding
 import com.example.dolegalrangers.models.QuizModel
 
@@ -22,14 +22,15 @@ class QuizActivity : AppCompatActivity() {
 
         val quizIndex = intent.getStringExtra("indexs")
 
-        list.add(QuizModel("Kya Abhi ke pita ne police ko bata kar sahi kiya ?","Bilkul Sahi kiya","Bilkul Galat kiya","Unhe police ko nahi batana chahiye tha","Unhe Raju ki help nahi karni chahiye thi","Bilkul Sahi kiya"))
-        list.add(QuizModel("Raju ki maa ne use kaam par kyu bheja tha","Taki vhe ghar par aaram kar sake","Ve apne bete ko pasand nahi karti thi","Voh chahti thi ki uska beta bhi kamana sikhe","Mazboori ke karan","Mazboori ke karan"))
-        list.add(QuizModel("Kis section ke tahat baccho se kaam karwana apradh hain ?","Koi Section nahi","Section 1920","Section 1986","Section 2020","Section 1986"))
+        list.add(QuizModel(R.drawable.rte,"Kya Abhi ke pita ne police ko bata kar sahi kiya ?","Bilkul Sahi kiya","Bilkul Galat kiya","Unhe police ko nahi batana chahiye tha","Unhe Raju ki help nahi karni chahiye thi","Bilkul Sahi kiya"))
+        list.add(QuizModel(R.drawable.childabuse,"Raju ki maa ne use kaam par kyu bheja tha","Taki vhe ghar par aaram kar sake","Ve apne bete ko pasand nahi karti thi","Voh chahti thi ki uska beta bhi kamana sikhe","Mazboori ke karan","Mazboori ke karan"))
+        list.add(QuizModel(R.drawable.childlabour,"Kis section ke tahat baccho se kaam karwana apradh hain ?","Koi Section nahi","Section 1920","Section 1986","Section 2020","Section 1986"))
         binding.question.text = list[0].question
         binding.option1.text = list[0].option1
         binding.option2.text = list[0].option2
         binding.option3.text = list[0].option3
         binding.option4.text = list[0].option4
+        binding.quizImage.setImageResource(list[0].image)
 //
         binding.option1.setOnClickListener{
             nextData(binding.option1.text.toString())
@@ -68,6 +69,7 @@ class QuizActivity : AppCompatActivity() {
             }
         } else {
             binding.question.text = list[count].question
+            binding.quizImage.setImageResource(list[count].image)
             binding.option1.text = list[count].option1
             binding.option2.text = list[count].option2
             binding.option3.text = list[count].option3

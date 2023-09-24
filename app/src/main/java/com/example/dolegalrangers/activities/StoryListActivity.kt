@@ -9,19 +9,19 @@ import com.example.dolegalrangers.models.StoryListModel
 
 class StoryListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStoryListBinding
-    private lateinit var list:ArrayList<StoryListModel>
+    private lateinit var list1:ArrayList<StoryListModel>
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState
+        )
         binding = ActivityStoryListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        list = ArrayList()
-        list.add(StoryListModel("Glass Factory","Child Labour"))
-        list.add(StoryListModel("Begger","Right to Education"))
-        list.add(StoryListModel("Rich Boy Poor Boy","Behaviour"))
+        list1 = ArrayList()
+        list1.add(StoryListModel("Glass Factory","Child Labour"))
+        list1.add(StoryListModel("Childhood Marriage","Child Marriage"))
         val storyRv = binding.storyListRv
         val layoutManager = LinearLayoutManager(this)
         storyRv.layoutManager = layoutManager
-        storyRv.adapter = StoryListAdapter(list)
+        storyRv.adapter = StoryListAdapter(list1)
 
 
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "288258868965",
+    "project_id": "dolegalrangers",
+    "storage_bucket": "dolegalrangers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288258868965:android:6d9324ce9d3d0f9701360c",
+        "android_client_info": {
+          "package_name": "com.example.dolegalrangers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz5irPS1YY8Jj04k7cJl1G_XxshAOkOxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

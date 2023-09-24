@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".activities.RegisterActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="cursive"
+        android:text="Do Legal"
+        android:textAlignment="center"
+        android:textSize="54sp" />
+
+
+    <EditText
+        android:id="@+id/signup_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/text_view_design"
+        android:backgroundTint="#48000000"
+        android:ems="10"
+        android:hint="Your Name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="5dp"
+        android:textColorHint="#616161" />
+
+    <EditText
+        android:id="@+id/signup_user_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/text_view_design"
+        android:backgroundTint="#48000000"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="5dp"
+        android:textColorHint="#616161"
+        tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/signup_user_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/text_view_design"
+        android:backgroundTint="#48000000"
+        android:ems="10"
+        android:visibility="gone"
+        android:hint="Parent's Phone number"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="5dp"
+        android:textColorHint="#616161"
+        tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+
+
+    <EditText
+        android:id="@+id/signup_user_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/text_view_design"
+        android:backgroundTint="#48000000"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="5dp"
+        android:textColorHint="#616161"
+        tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/signup_user_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/text_view_design"
+        android:visibility="gone"
+        android:backgroundTint="#48000000"
+        android:ems="10"
+        android:hint="Enter OTP Here..."
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="5dp"
+        android:textColorHint="#616161"
+        tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+
+    <Button
+        android:id="@+id/signup_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#2C00C2FD"
+        android:visibility="gone"
+        android:text="Get OTP"
+        app:cornerRadius="8dp"
+        tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/signup_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#2C00C2FD"
+        android:text="Register"
+        app:cornerRadius="8dp"
+        tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Click to login existing account!!"
+        android:textAlignment="center"
+        android:textColor="#2A4091"
+        android:textSize="14sp" />
+
+</LinearLayout>

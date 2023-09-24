@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.MediaController
-import android.widget.TextView
 import com.example.dolegalrangers.R
 import com.example.dolegalrangers.databinding.ActivityStoryBinding
 import com.example.dolegalrangers.models.StoryModel
@@ -17,58 +16,72 @@ class StoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityStoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val txt = findViewById<TextView>(R.id.textView)
         val storyIndex = intent.getStringExtra("index")
-        txt.text = storyIndex.toString()
 
         list = ArrayList()
 
         list.add(
             StoryModel(
-                "Ek samay ki baat hain . Ek gav main do bahut ganisht mitra the jinme se ek ka naam Abhi aur dusre ka naam Raju tha . " +
-                        "Abhi jaha bahut padhi likhi family se tha vahi Raju bahut garib aur anpadh pariwar se tha . " +
-                        "Ve dono bahut aache dost the aur hamesha ve dono saath rehna saath khelna pasand karte the." +
-                        "Ve dono apne is jiwan se bahut khush the. " +
-                        "Roj veh maidan me khelne jate the par kuch dino se Raju maidan main khelne nahi aa raha tha aur uske ghar par puchne par bhi koi jawab Abhi ko nahi mila jiske baad ." +
-                        " Abhi bahut udas ho gaya aur ghar jane laga . " +
-                        "Aaj waha roj wale raste ko chod kisi aur raste se ghar ja raha tha jo ki ek purani glass factory ke paas se hokar nikalta tha ." +
-                        "Jab Abhi vaha se jaa raha tha toh usne ek bacche ki rone ki awaj suni. " +
-                        "Usne suna ki waha aawaj us factoy se aa rahi hain. " +
-                        "Usne ek khidki se uss factory main jhak kar dekha toh paya ki waha bahut se jane kaam kar rahe hain aur jab usne apni nazar gumai " +
-                        "toh dekha ki ek aadmi ek bacche ko uski galti pr maar raha h aur use aag ki Bhatti main kaam karwa raha hain" +
-                        "Abhi toh tab chok gaya jab usne dekha ki voh bacha aur koi nahi uska dost Raju hi tha Voh kuch sochta ki " +
-                        "use pehle use apne kandhe par ek haat mehsus hua aur voh haath use use factory ke andar khich raha tha " +
-                        "Abhi jitni takat laga sakta tha usne lagai aur vaha se bhag gaya . Andhere ki wajah se voh dekh toh nahi " +
-                        "paya ki voh haath kiska tha pr uss samay vaha se bhagna hi uske liye sabse behtar rasta tha Abhi jald se " +
-                        "jald ghar pohocha aur sari baat apne mata pita ko batai aur uske mata pita ne bhi puri baat bahut vistaar " +
-                        "main suni aur uss factory main jane ka nirnay liya . Abhi mata pita dono graduate the isliye unhone iss " +
-                        "baat ko aise hi jane nahi diya . Agle hi din Abhi ke mata pita uss factory pauche aur vaha ke manager se " +
-                        "baat ki .Uske mata pita ne manager se kaha ki aap jo bhi kr rahe ho vah kanooni apradh hain iski wajah se" +
-                        " aapko jail bhi ho sakti hain. Toh manager ne thoda gussa hokar kaha ki main nahi rakhta inko kaam par " +
-                        "inke mata pita chod kar jate hain inhe yaha main toh aur inka bhala hi kar raha hu . Abhi ke mata pita ne " +
-                        "kaha ki fir bhi aap itne chote bacche se kaam nahi karwa sakte yaha galat hain. Manager ne kaha ki samjhana" +
-                        " hi hain toh inke mata pita ko samjhao jo inhe yaha chod kar jate hain.Iske baad Abhi ke mata pita Raju ke" +
-                        " ghar jate hain. Aur vaha ve Raju ki mummy se milte hain. Aur unse puchte hain ki aap apne bacche ko us " +
-                        "factory main kyu bhejte hain kya aapko pata nahi ki kisi bacche ko kaam par bhejna kanooni apradh hain." +
-                        " Toh Raju ki maa roti roti kehti hain ki main kya kru iske pita ka 3 din pehle hi dehant hua hain aur " +
-                        "humare upar uss manager ka karza hain jiski wajah se mujhe Raju ko na chahte hue bhi vaha kaam karne ke " +
-                        "liye bhejna padta hain. \n Nahi toh… \n Nahi toh vaha hum dono ko maar dene ki dhamki deta hain. Abhi ke" +
-                        " pita bolte hain toh aapko police main complaint karni chahiye . Toh Raju ki maa bolti hain ki hum chote" +
-                        " logo ki baato pr koi dhyaan nahi deta sahab humare saath raste par pade kachre ki tarah bartav kia jata hain." +
-                        " Nahi toh vaha hum dono ko maar dene ki dhamki deta hain. Abhi ke pita bolte hain toh aapko police main" +
-                        " complaint karni chahiye . Toh Raju ki maa bolti hain ki hum chote logo ki baato pr koi dhyaan nahi deta" +
-                        " sahab humare saath raste par pade kachre ki tarah bartav kia jata hain. Abhi ke pita ki police main aachi" +
-                        " jaan pehchan thi toh unhone yeh sab baat police main batayi aur thodi hi der main police Raju ke ghar " +
-                        "ke bahar aa gai. Fir ve sab milkar glass factory ke manager ke paas gaye aur police ne manager ko giraftar" +
-                        " kar liya aur kaha......\n Tumhe pata nahi hain ki section 1986 ke anusar tum kisi 14 saal ya usse chote" +
-                        " bacche se aisa koi kaam nahi karwa sakte jime unhe kisi bhi tarah ka nuksan ho raha ho . Aur yaha tum is" +
-                        " bacche se kaanch ka karwa rahe ho, Agar kabhi voh garam garam kach iss par gir gaya toh uska jimmevar " +
-                        "kon rahega. Koi baat nahi thoda samay jail main rahoge toh sab samajh aa jayega. Fir police manager ko " +
-                        "lekar waha se chali gai. Abhi ki mummy ne ek tailor ke yaha Raju ki maa ko nokri bhi dilwa di jiski wajah " +
-                        "se unka guzara aache se hone lag gaya tha.\n \n                 THE END",
-                "android.resource://" + packageName + "/" + R.raw.video1
+                "एक समय की बात है। एक गाँव में दो बहुत गहरे मित्र थे, जिनमें से एक का नाम अभी और दूसरे का नाम राजू था।\n" +
+                        "अभी जहां बहुत पढ़ी-लिखी परिवार से था, वही राजू बहुत गरीब और अनपढ़ परिवार से था।\"\n" +
+                        "वे दोनों बहुत अच्छे दोस्त थे और हमेशा वे दोनों साथ रहना और साथ खेलना पसंद करते थे।\"\n" +
+                        "वे दोनों अपने इस जीवन से बहुत खुश थे।\n\n" +
+                        "रोज़ वे मैदान में खेलने जाते थे, पर कुछ दिनों से राजू मैदान में खेलने नहीं आ रहा था, और उसके घर पर पूछने पर भी कोई जवाब अभी को नहीं मिला, जिसके बाद।\"\n" +
+                        "अभी बहुत उदास हो गया और घर जाने लगा।\"\n" +
+                        "आज वह रोज़ वाले रास्ते को छोड़ किसी और रास्ते से घर जा रहा था, जो कि एक पुरानी ग्लास फैक्टरी के पास से होकर निकलता था।\"\n" +
+                        "जब अभी वहां से जा रहा था, तो उसने एक बच्चे की रोने की आवाज़ सुनी।\"\n" +
+                        "उसने सुना कि वहाँ आवाज़ उस फैक्टरी से आ रही है।\n\n" +
+                        "उसने एक खिड़की से उस फैक्टरी में झाँक कर देखा, तो पाया कि वहाँ बहुत से जवान काम कर रहे हैं और जब उसने अपनी नजर गुमाई,\"\n" +
+                        "तो देखा कि एक आदमी एक बच्चे को उसकी ग़लती पर मार रहा है और उसे आग की भट्टी में काम करवा रहा है।\"\n" +
+                        "अभी तो तब चौक गया जब उसने देखा कि वो बच्चा और कोई नहीं, उसका दोस्त राजू ही था। वो कुछ सोचता कि\"\n" +
+                        "उसे पहले उसे अपने कंधे पर एक हाथ महसूस हुआ और वह हाथ उसे उसे फैक्टरी के अंदर खींच रहा था।\n\n" +
+                        "अभी जितनी ताक़त लगा सकता था, उसने लगाई और वहाँ से भाग गया। अंधेरे की वजह से वो देख तो नहीं\"\n" +
+                        "पाया कि वो हाथ किसका था पर उस समय वहाँ से भागना ही उसके लिए सबसे बेहतर रास्ता था। अभी जल्द से\"\n" +
+                        "जल्द घर पहुँचा और सारी बात अपने माता-पिता को बताई और उसके माता-पिता ने भी पूरी बात बहुत विस्तार\"\n" +
+                        "में सुनी और उस फैक्टरी में जाने का निर्णय लिया। अभी माता-पिता दोनों ग्रेजुएट थे, इसलिए उन्होंने इस\n\n" +
+                        "बात को ऐसे ही जाने नहीं दिया। अगले ही दिन अभी के माता-पिता उस फैक्टरी पहुँचे और वहाँ के मैनेजर से\"\n" +
+                        "बात की। उसके माता-पिता ने मैनेजर से कहा कि आप जो भी कर रहे हो, वह कानूनी अपराध हैं, इसकी वजह से\"\n" +
+                        "आपको जेल भी हो सकती हैं। तो मैनेजर ने थोड़ा गुस्सा होकर कहा कि मैं नहीं रखता इनको काम पर,\"\n" +
+                        "इनके माता-पिता छोड़ कर जाते हैं, इन्हें यहाँ, मैं तो और इनका भला ही कर रहा हूँ। अभी के माता-पिता ने\"\n" +
+                        "कहा कि फिर भी आप इतने छोटे बच्चे से काम नहीं करवा सकते, यहाँ गलत है। मैनेजर ने कहा कि समझाना\"\n" +
+                        "ही है तो इनके माता-पिता को समझाओ, जो इन्हें यहाँ छोड़ कर जाते हैं। इसके बाद अभी के माता-पिता राजू के\"\n" +
+                        "घर जाते हैं और वहाँ वे राजू की माँ से मिलते हैं और उनसे पूछते हैं कि आप अपने बच्चे को उस फैक्टरी में\n\n" +
+                        "क्यों भेजते हैं, क्या आपको पता नहीं कि किसी बच्चे को काम पर भेजना कानूनी अपराध है।\"\n" +
+                        "तो राजू की माँ रोती-रोती कहती है कि मैं क्या करूँ, इसके पिता का 3 दिन पहले ही देहांत हो गया है और\"\n" +
+                        "हमारे ऊपर उस मैनेजर का कर्ज़ है जिसकी वजह से मुझे राजू को ना चाहते हुए भी वहाँ काम करने के लिए भेजना पड़ता है।\"\n" +
+                        "नहीं तो…\n\n" +
+                        "नहीं तो वह हम दोनो को मार देने की धमकी देता है। अभी के पिता बोलते हैं, तो आपको पुलिस में शिकायत करनी चाहिए।\"\n" +
+                        "तो राजू की माँ बोलती है कि हम छोटे लोगों की बातों पर कोई ध्यान नहीं देता, साहब हमारे साथ रास्ते पर पड़े कचरे की\n\n" +
+                        "तरह बर्ताव किया जाता है।\"\n" +
+                        "अभी के पिता की पुलिस में अच्छी जान पहचान थी, तो उन्होंने यह सब बात पुलिस में बताई और थोड़ी ही देर में पुलिस राजू के घर\"\n" +
+                        "के बाहर आ गई। फिर वे सब मिलकर ग्लास फैक्टरी के मैनेजर के पास गए और पुलिस ने मैनेजर को गिरफ्तार कर लिया और कहा...\"\n" +
+                        "तुम्हे पता नहीं है कि सेक्शन 1986 के अनुसार तुम किसी 14 साल या उससे छोटे बच्चे से ऐसा कोई काम नहीं करवा सकते, जिमे उन्हें\"\n" +
+                        "किसी भी तरह का नुकसान हो रहा हो। और यहाँ तुम इस बच्चे से कांच का काम करवा रहे हो, अगर कभी वह गरम गरम काच इस पर गिर गया\"\n" +
+                        "तो उसका जिम्मेदार कौन रहेगा। कोई बात नहीं, थोड़ा समय जेल में रहोगे तो सब समझ आ जायेगा। फिर पुलिस मैनेजर को लेकर वहाँ से चली गई।\n\n" +
+                        "अभी की माँ ने एक टेलर के यहाँ राजू की माँ को नौकरी भी दिलवा दी, जिसकी वजह से उनका गुज़रा अच्छे से होने लग गया था। थे एंड\n\n" +
+                        "                कहानी समापत",
+                "android.resource://" + packageName + "/" + R.raw.stry1
             )
         )
+
+        list.add(StoryModel("एक छोटा पालमपुर नाम का गाँव था, जो एक जंगल के किनारे पड़ता था, उस गाँव में प्रिया नाम की एक लड़की रहती थी, वह एक इंटेलिजेंट और श्रांति बच्ची थी, जिसके बहुत सारे सपने थे, जीवन में बहुत आगे बढ़ना चाहती थी। हालांकि, पालमपुर में एक समस्या थी कि वहां बाल विवाह की प्रथा थी।\n" +
+                "\n" +
+                "प्रिया के माता-पिता, और भी गाँववाले इस प्रथा का पालन करते थे। और उन्हें यह लगता था कि उसे उनकी बेटियों के भविष्य को सुरक्षित करने का यही तरीका था। प्रिया केवल 12 साल की थी, और उसके घर में उसकी शादी की बात शुरू हो गई थी।\n" +
+                "\n" +
+                "हालांकि, प्रिया को उसके गाँव के बाहर की दुनिया के बारे में पता था। वह चुपके से कुछ किताबें पढ़ती रहती थी, उसे पढ़ने का बहुत शौक था। और वह किताबों के माध्यम से बाहरी दुनिया के बारे में जानने की कोशिश करती थी। लेकिन उसे हमेशा एक चीज की बहुत चिंता थी कि उसकी शादी करा देंगे, उसके सपने उनके लिए महत्व नहीं करते थे।\n" +
+                "\n" +
+                "एक दिन की बात है, वह जंगल में घूम रही थी। वह घूमते-घूमते कुछ ज्यादा दूर निकल जाती है और वह खो जाती है जंगल में, तभी उसे एक लड़की मिलती है और उनका नाम शांति था, वो प्रिया से बात करने लगती है, तब प्रिया उन्हें बताती है कि उसकी शादी होने वाली है, उसके लिए लड़का देखा जा रहा है और वह ये बोल कर रोने लगती है। तब शांति बोलती है कि उसके साथ भी ऐसा हुआ था, तो वह भाग गई थी गाँव छोड़कर और वह यह करके आजाद महसूस कर रही थी, लेकिन शांति ने कहा मैं तुम्हारे साथ हूँ और हम दोनों मिलकर इसके खिलाफ आवाज़ उठाते हैं, जिससे आगे भी किसी लड़की को परेशानी नहीं होगी। शांति ने प्रिया की आँखों में डर और खुशी दोनों देखी जब उसने ये कहा कि वह उसे एक सीर से मिलाने वाली थी जिस सीर ने शांति की मदद की थी। वो सीर का नाम अभिनव था। वो अपने पड़ोसी गाँव में रहते थे और वही एक स्कूल चलाते थे। प्रिया ने कहा कब मिलना है उनसे, वो तैयार है, वो घर से छुपकर आ जाएगी। जब वह अभिनव सर के पास जाती है तब उसे लगता है कि वो जिसके बारे में पढ़ती थी, वो उस दुनिया में आ गई थी। सर ने प्रिया का स्वागत बहुत अच्छे से किया और उसे पढ़ाना शुरू कर दिया।\n" +
+                "\n" +
+                "प्रिया के माता-पिता को यह बात पता चल जाती है कि वह दूसरे गाँव में पढ़ने जा रही है और वह भी बिना बताए, तो वह दोनों बहुत गुस्सा किये उसे और उसे धमकी भी दी कि जल्द से जल्द तेरी शादी करा देंगे। लेकिन प्रिया अपने सपने को नहीं छोड़ी, उसने नई मिली जानकारी और सपने के साथ मजबूती से दाती रही।\n" +
+                "\n" +
+                "प्रिया की विदेश में अध्ययन और बाल विवाह के खिलाफ उसकी लड़ाई की खबर पूरे गाँव में चर्चा हो रही थी। कुछ गाँववाले उसके खिलाफ थे और कुछ उसके साथ थे, लेकिन गुप्त तरीके से क्योंकि और लोग उनके खिलाफ हो जाते, इसलिए वे गुप्त तरीके से उनके साथ थे। शांति और अभिनव, साथ में कुछ गाँववाले, प्रिया के बचाव के लिए साथ आए थे।\n" +
+                "\n" +
+                "सब मिलकर, वहां एक सभा आयोजित की गई, जहां बाल विवाह के हानिकारक प्रभावों पर बात की गई। धीरे-धीरे, सबके मन बढ़ने लगे और माता पिता अपने बातों पर विचार करने लगे।\n" +
+                "\n" +
+                "जैसे-जैसे दिन बीत रहा था, वैसे-वैसे प्रिया और उसके बाल विवाह की लड़ाई ने पालमपुर में और भी बच्चों को प्रेरित किया। आखिरकार, गाँव के नेता जी ने बच्चियों की विवाह की प्रथा को समाप्त करने का निर्णय लिया।\n" +
+                "\n" +
+                "प्रिया के इस संघर्ष के कारण कितनी बचियाँ बच गईं। और इस कहानी से प्रिया, उम्मीद और परिवर्तन के प्रतीक बन गई। और सिर्फ पालमपुर में ही नहीं, बल्कि पड़ोसी गाँव में भी यह लागू हो गया। और प्रिया अपनी शिक्षा पूरी करती है और शिक्षक बनती है और बच्चों को उनके अधिकारों के बारे में पढ़ाती है।","android.resource://" + packageName + "/" + R.raw.stry2))
+
 
         if (storyIndex != null) {
             binding.videoView.setVideoPath(list[storyIndex.toInt()].s_video)
